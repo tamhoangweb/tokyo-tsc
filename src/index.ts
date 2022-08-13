@@ -59,12 +59,12 @@ interface ContactAdapter {
   getData: () => Promise<Contact[]>;
 }
 class MyContactApdapter implements ContactAdapter {
-  getData() {
-    const contacts: Contact[] = [
+  async getData() {
+    const contacts: Contact[] = await [
       { name: 'A', phone: '123' },
       { name: 'B', phone: '456' },
     ];
-    return Promise.resolve(contacts);
+    return contacts;
   }
 }
 const adapter = new MyContactApdapter();
